@@ -20,22 +20,27 @@ app.factory('Authentication', ['$rootScope', '$firebaseAuth',
 
             register: function(rate){
 
+                var unix = Math.round(+new Date()/1000);
 
 
                 var rateRef = new Firebase(FIREBASE_URL + 'rates')
 
 
-                    .child('currency').set({
+                    .child(unix).set({
 
 
-                        thb_kip: '1' ,
-                        kip_thb: '2' ,
-                        usd_thb: '3' ,
-                        thb_usd: '4'
+                        thb_kip: rate.thb_kip ,
+                        kip_thb: rate.kip_thb ,
+                        usd_thb: rate.usd_thb ,
+                        thb_usd: rate.thb_usd
+
 
 
                     });// rate
 
+
+
+                $rootScope.message = "Success";
 
 
                 //auth.$createUser({

@@ -11,7 +11,7 @@ app.controller('LoginController',['$scope','Authentication', function ($scope,Au
 
     $scope.register = function() {
 
-        Authentication.register($scope.user);
+        Authentication.register($scope.rate);
 
 
     };// register

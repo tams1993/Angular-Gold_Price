@@ -1,7 +1,15 @@
 <div class="container">
     <!-- Example row of columns -->
 
+    <div style="text-align: center">
+    <h1 ng-show="rateform.$invalid"> ກະລຸນາໃສ່ rate ໃຫ້ຄົບທຸກຫ້ອງ</h1>
+    </div>
     <form name="rateform" novalidate ng-submit="register()">
+
+        <div style="text-align: center">
+
+        <h1 ng-show="message"> {{message}}</h1>
+        </div>
 
         <div class="row form-group">
             <div class="col-md-6">
@@ -15,7 +23,7 @@
             <div class="col-md-6">
                 <h2>kip-thb</h2>
 
-                <input type="number" ng-model="rate.kip_thb" class="form-control">
+                <input type="number" ng-model="rate.kip_thb" class="form-control" ng-required="true">
 
 
             </div>
@@ -26,7 +34,7 @@
             <div class="col-md-6">
                 <h2>usd-thb</h2>
 
-                <input type="number" ng-model="rate.usd_thb" class="form-control">
+                <input type="number" ng-model="rate.usd_thb" class="form-control" ng-required="true">
 
 
             </div>
@@ -34,14 +42,14 @@
             <div class="col-md-6">
                 <h2>Thb-usd</h2>
 
-                <input type="number" ng-model="rate.thb_usd" class="form-control">
+                <input type="number" ng-model="rate.thb_usd" class="form-control" ng-required="true">
 
 
             </div>
 
         </div>
 
-        <button class="btn btn-raised btn-primary">Add Rate</button>
+        <button class="btn btn-raised btn-primary" ng-disabled="rateform.$invalid">Add Rate</button>
 
     </form>
 
