@@ -1,0 +1,59 @@
+<div class="container">
+
+    <div class="jumbotron">
+
+        <div class="row form-group">
+
+            <div class="col-md-6">
+                <h1>Thb-kip</h1>
+
+                <div class="row" style="display: inline-block">
+
+
+                    <p>{{Thbkip}}</p>
+
+
+                    <h1>Username: </h1>
+                    <input type="number" ng-model="amount_thb_kip" class="form-control"> =
+
+
+                    <p>{{Thbkip * amount_thb_kip | currency }}</p>
+
+
+                </div>
+
+
+            </div>
+
+            <div class="col-md-6">
+                <h1>kip-thb</h1>
+
+                <p>{{kipthb}}</p>
+
+            </div>
+
+        </div>
+
+        <div class="row form-group">
+
+            <div class="col-md-6">
+                <h1>usd-thb</h1>
+
+                <p>{{usdthb}}</p>
+
+            </div>
+
+            <div class="col-md-6">
+                <h1>Thb-usd</h1>
+
+                <p>{{Thbusd}}</p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
+
+<div ng-include="'views/add-rate.html'"></div>

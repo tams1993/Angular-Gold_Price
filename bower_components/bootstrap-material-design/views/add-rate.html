@@ -1,0 +1,51 @@
+<div class="container">
+    <!-- Example row of columns -->
+
+    <form name="rateform" novalidate ng-submit="register()">
+
+        <div class="row form-group">
+            <div class="col-md-6">
+                <h2>Thb-kip</h2>
+
+                <input type="number" ng-model="rate.thb_kip" class="form-control" ng-required="true">
+
+
+            </div>
+
+            <div class="col-md-6">
+                <h2>kip-thb</h2>
+
+                <input type="number" ng-model="rate.kip_thb" class="form-control">
+
+
+            </div>
+
+        </div>
+
+        <div class="row form-group">
+            <div class="col-md-6">
+                <h2>usd-thb</h2>
+
+                <input type="number" ng-model="rate.usd_thb" class="form-control">
+
+
+            </div>
+
+            <div class="col-md-6">
+                <h2>Thb-usd</h2>
+
+                <input type="number" ng-model="rate.thb_usd" class="form-control">
+
+
+            </div>
+
+        </div>
+
+        <button class="btn btn-raised btn-primary">Add Rate</button>
+
+    </form>
+
+    <hr>
+
+
+</div> <!-- /container -->
