@@ -22,7 +22,6 @@
     <link href="index.css" rel="stylesheet">
 
 
-
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -36,8 +35,6 @@
     <script src="scripts/index.js"></script>
     <script src="scripts/material.js"></script>
     <script src="scripts/ripples.js"></script>
-
-
 
 
     <script src="scripts/angular/angular.min.js"></script>
@@ -60,26 +57,27 @@
 
 <body>
 
+
+
 <div ng-include="'views/nav.html'">
 
 
+</div>
+
+<div class="userinfo" ng-show="currentRate">
+
+    <!--<h1 ng-repeat="">{{currentRate}}</h1>-->
 
 </div>
 
-<div ng-view>
+<div ng-view style="margin-bottom: 100px">
 
 
 </div>
 
-<div ng-include="'views/footer.html'"></div>
+<div ng-include="'views/footer.html'" class="card navbar navbar-fixed-bottom" id="footer"></div>
 
 <!-- Main jumbotron for a primary marketing message or call to action -->
-
-
-
-
-
-
 
 
 </body>

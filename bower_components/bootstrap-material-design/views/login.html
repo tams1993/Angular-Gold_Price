@@ -8,7 +8,7 @@
 
             <h1>Username:</h1>
 
-            <input type="email" class="form-control" name="email" ng-required="true" ng-model="user.email">
+            <input type="email" class="form-control" name="user.email" ng-required="true" ng-model="user.email">
             <p class="text-danger" ng-show="myform.email.$invalid && myform.email.$touched">
 
                 Must be a valid email
@@ -21,7 +21,7 @@
 
             <h1>Password:</h1>
 
-            <input type="password" class="form-control" name="password" ng-required="true" ng-model="user.password">
+            <input type="password" class="form-control" name="user.password" ng-required="true" ng-model="user.password">
             <p class="text-danger" ng-show="myform.password.$invalid && myform.password.$touched">
 
 
@@ -31,8 +31,6 @@
         </div>
 
         <button class="btn btn-raised btn-primary" ng-disabled="myform.$invalid">Login</button>
-        <h1>{{user}}</h1>
-        <h1>{{pass}}</h1>
 
 
     </form>

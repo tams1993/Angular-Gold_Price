@@ -1,3 +1,8 @@
+
+html body {
+    height: 100%
+}
+
 * {
     box-sizing: border-box;
 }
@@ -156,55 +161,55 @@
 }
 
 /*#checkbox .sample1 label {*/
-    /*font-weight: bold;*/
+/*font-weight: bold;*/
 /*}*/
 
 /*#checkbox .hint {*/
-    /*padding-left: 45px;*/
-    /*padding-top: 20px;*/
-    /*font-weight: 400;*/
+/*padding-left: 45px;*/
+/*padding-top: 20px;*/
+/*font-weight: 400;*/
 /*}*/
 
 /*#checkbox .sample1 {*/
-    /*padding-bottom: 20px;*/
+/*padding-bottom: 20px;*/
 /*}*/
 
 /*#checkbox h2 {*/
-    /*font-size: 18.7199993133545px;*/
-    /*font-weight: bold;*/
-    /*margin-bottom: 30px;*/
+/*font-size: 18.7199993133545px;*/
+/*font-weight: bold;*/
+/*margin-bottom: 30px;*/
 /*}*/
 
 /*#checkbox .sample2 {*/
-    /*width: 300px;*/
-    /*clear: both;*/
-    /*font-weight: 400;*/
+/*width: 300px;*/
+/*clear: both;*/
+/*font-weight: 400;*/
 /*}*/
 
 /*#checkbox .sample2 {*/
-    /*padding: 10px 0;*/
+/*padding: 10px 0;*/
 /*}*/
 
 /*#checkbox .sample2 .text {*/
-    /*display: inline-block;*/
+/*display: inline-block;*/
 /*}*/
 
 /*#checkbox .sample2 .checkbox {*/
-    /*float: right;*/
-    /*margin: 0;*/
+/*float: right;*/
+/*margin: 0;*/
 /*}*/
 
 /*#progress-bar h2 {*/
-    /*font-size: 18.7199993133545px;*/
-    /*font-weight: bold;*/
-    /*margin-bottom: 30px;*/
+/*font-size: 18.7199993133545px;*/
+/*font-weight: bold;*/
+/*margin-bottom: 30px;*/
 /*}*/
 
 /*#dialog h2 {*/
-    /*padding: 14px;*/
-    /*margin: 0;*/
-    /*font-size: 16px;*/
-    /*font-weight: 400;*/
+/*padding: 14px;*/
+/*margin: 0;*/
+/*font-size: 16px;*/
+/*font-weight: 400;*/
 /*}*/
 
 /*#shadow h2 {*/
@@ -249,14 +254,14 @@
 }
 
 /*#radio-button h2 {*/
-    /*font-size: 18.7199993133545px;*/
-    /*font-weight: bold;*/
-    /*margin-bottom: 30px;*/
-    /*margin-top: 50px;*/
+/*font-size: 18.7199993133545px;*/
+/*font-weight: bold;*/
+/*margin-bottom: 30px;*/
+/*margin-top: 50px;*/
 /*}*/
 
 /*#radio-button .radio {*/
-    /*margin: 20px 10px;*/
+/*margin: 20px 10px;*/
 /*}*/
 
 /*#input h2 {*/
@@ -270,21 +275,21 @@
 }
 
 /*#input .form-group {*/
-    /*margin: 30px 0;*/
+/*margin: 30px 0;*/
 /*}*/
 
 /*#slider .sample1, #slider .sample2 {*/
-    /*padding: 20px 0;*/
-    /*background-color: #f0f0f0;*/
-    /*margin-bottom: 20px;*/
+/*padding: 20px 0;*/
+/*background-color: #f0f0f0;*/
+/*margin-bottom: 20px;*/
 /*}*/
 
 /*#slider .sample2 {*/
-    /*height: 150px;*/
+/*height: 150px;*/
 /*}*/
 
 /*#slider .sample2 .slider {*/
-    /*margin: 0 40px;*/
+/*margin: 0 40px;*/
 /*}*/
 
 /*#slider h2 {*/
@@ -295,7 +300,7 @@
 /*}*/
 
 /*#slider .slider {*/
-    /*margin: 15px;*/
+/*margin: 15px;*/
 /*}*/
 
 /*#button h2 {*/
@@ -306,7 +311,7 @@
 /*}*/
 
 /*#floating-action-button .btn {*/
-    /*margin: 20px;*/
+/*margin: 20px;*/
 /*}*/
 
 /*#floating-action-button h2 {*/
@@ -324,8 +329,8 @@
 /*}*/
 
 /*#dropdown .dropdown {*/
-    /*font-size: 30px;*/
-    /*padding: 20px;*/
+/*font-size: 30px;*/
+/*padding: 20px;*/
 /*}*/
 
 /*#dropdown-menu h2 {*/
@@ -336,25 +341,32 @@
 /*}*/
 
 /*#dropdown-menu .sample {*/
-    /*width: 200px;*/
+/*width: 200px;*/
 /*}*/
 
 /*#dropdown-menu .form-group {*/
-    /*margin: 30px 0;*/
+/*margin: 30px 0;*/
 /*}*/
 
 /*#toggle-button h2 {*/
-    /*font-size: 18.7199993133545px;*/
-    /*font-weight: bold;*/
-    /*margin-bottom: 30px;*/
-    /*margin-top: 50px;*/
+/*font-size: 18.7199993133545px;*/
+/*font-weight: bold;*/
+/*margin-bottom: 30px;*/
+/*margin-top: 50px;*/
 /*}*/
 
 /*#toggle-button .togglebutton label {*/
-    /*margin: 20px 10px;*/
-    /*width: 200px;*/
+/*margin: 20px 10px;*/
+/*width: 200px;*/
 /*}*/
 
 /*#toggle-button .togglebutton .toggle {*/
-    /*float: right;*/
+/*float: right;*/
 /*}*/
+
+#footer{
+    position: inherit;
+    bottom: 0;
+
+    width: 100%;
+}

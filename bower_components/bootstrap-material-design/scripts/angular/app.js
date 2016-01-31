@@ -1,7 +1,23 @@
-var app = angular.module('App', ['ngRoute','firebase'])
-    .constant('FIREBASE_URL','https://currencyrate.firebaseio.com/');
+var app = angular.module('App', ['ngRoute', 'firebase'])
+    .constant('FIREBASE_URL', 'https://currencyrate.firebaseio.com/');
 
-app.config(['$routeProvider','$locationProvider',function ($routeProvider, $locationProvider) {
+app.run(['$rootScope', '$location', function ($rootScope, $location) {
+
+    $rootScope.$on('$routeChangeError', function (event, next, previous, error) {
+
+        if (error == "AUTH_REQUIRED") {
+
+
+            $rootScope.loginmessage = "ຂໍໂທດ, ເຈົ້າຕ້ອງລົງຊື່ເຂົ້າໃຊ້ກ່ອນ"
+
+            $location.path('/');
+        }// Auth Required
+
+    });// event info
+
+}]);// run
+
+app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
 
 
     $routeProvider
@@ -10,22 +26,29 @@ app.config(['$routeProvider','$locationProvider',function ($routeProvider, $loca
             templateUrl: 'views/show-rate.html',
             controller: 'MainController'
 
-        }).when('/login',{
+        }).when('/login', {
 
             templateUrl: 'views/login.html',
             controller: 'LoginController'
 
 
-    }).when('/add',{
+        }).when('/add', {
 
 
             templateUrl: 'views/add-rate.html',
-            controller: 'LoginController'
+            controller: 'LoginController',
+            resolve: {
 
+                currentAuth: function (Authentication) {
+
+                    return Authentication.requireAuth();
+
+                }
+
+            }
 
 
         })
-
 
 
         .otherwise({redirectTo: '/'});

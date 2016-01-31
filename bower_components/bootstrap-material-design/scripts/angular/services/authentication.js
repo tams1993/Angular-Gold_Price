@@ -1,46 +1,108 @@
-app.factory('Authentication', ['$rootScope', '$firebaseAuth',
-    'FIREBASE_URL', function ($rootScope, $firebaseAuth, FIREBASE_URL) {
+app.factory('Authentication', ['$rootScope', '$firebaseAuth','$location', '$firebaseObject',
+    'FIREBASE_URL', function ($rootScope, $firebaseAuth,$location,$firebaseObject, FIREBASE_URL) {
 
 
 
         var ref = new Firebase(FIREBASE_URL);
         var auth = $firebaseAuth(ref);
+        $rootScope.statusmessage = "login";
+
+
+        auth.$onAuth(function (authUser) {
+
+            if(authUser){
+
+                var userRef = new Firebase(FIREBASE_URL + 'rates/');
+                var userObj = $firebaseObject(userRef);
+                $rootScope.currentRate = userObj;
+
+            }else{
+
+                $rootScope.currentRate = '';
+
+            }
+
+        });
 
 
         return {
 
 
+
             login: function(user){
 
 
-                $rootscope.message = "Welcome " + $scope.user.email;
+                auth.$authWithPassword({
+
+                    email: user.email,
+                    password: user.password
+
+                }).then(function(regUser){
+
+                    $location.path('/add');
+                    $rootScope.user = user.email;
+                    $rootScope.statusmessage = "logout";
+
+
+
+                }).catch(function(error){
+
+                    $rootScope.message = error.message;
+
+                });
+
 
             }, // login
+
+            logout: function(){
+
+                $rootScope.statusmessage = "login";
+
+                return auth.$unauth();
+
+            }, // logout
+
+            requireAuth: function(){
+
+
+                return auth.$requireAuth();
+
+            },// requireAuth
 
 
             register: function(rate){
 
                 var unix = Math.round(+new Date()/1000);
 
+                auth.$onAuth(function (authUser) {
 
-                var rateRef = new Firebase(FIREBASE_URL + 'rates')
-
-
-                    .child(unix).set({
+                    var rateRef = new Firebase(FIREBASE_URL + 'rates')
 
 
-                        thb_kip: rate.thb_kip ,
-                        kip_thb: rate.kip_thb ,
-                        usd_thb: rate.usd_thb ,
-                        thb_usd: rate.thb_usd
+                        .child(authUser.uid).child(unix).set({
 
 
-
-                    });// rate
+                            thb_kip: rate.thb_kip ,
+                            kip_thb: rate.kip_thb ,
+                            usd_thb: rate.usd_thb ,
+                            thb_usd: rate.thb_usd
 
 
 
-                $rootScope.message = "Success";
+                        });// rate
+
+                });
+
+
+
+
+
+                    $rootScope.message = "Success";
+
+
+
+
+
 
 
                 //auth.$createUser({

@@ -8,6 +8,10 @@ app.controller('LoginController',['$scope','Authentication', function ($scope,Au
 
         Authentication.login($scope.user);
     };
+    $scope.logout = function () {
+
+        Authentication.logout();
+    };// logout
 
     $scope.register = function() {
 
@@ -15,6 +19,8 @@ app.controller('LoginController',['$scope','Authentication', function ($scope,Au
 
 
     };// register
+
+
 
 
 
