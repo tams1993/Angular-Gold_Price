@@ -43,6 +43,8 @@ app.factory('Authentication', ['$rootScope', '$firebaseAuth','$location', '$fire
                     $rootScope.user = user.email;
                     $rootScope.statusmessage = "logout";
 
+                    console.log(regUser);
+
 
 
                 }).catch(function(error){
@@ -56,9 +58,14 @@ app.factory('Authentication', ['$rootScope', '$firebaseAuth','$location', '$fire
 
             logout: function(){
 
-                $rootScope.statusmessage = "login";
 
-                return auth.$unauth();
+
+
+                 return auth.$unauth();
+
+
+
+
 
             }, // logout
 

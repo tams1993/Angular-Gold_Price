@@ -1,4 +1,3 @@
-
 <nav class="navbar navbar-default navbar-fixed-top" style="position: relative">
     <div class="container">
         <div class="navbar-header">
@@ -12,11 +11,14 @@
             <a class="navbar-brand" href="/">Gold-Rate</a>
         </div>
 
-        <div ng-hide="user"><a ng-href="#/login"  class="navbar-brand" style="float: right">login</a></div>
-        <div ng-show="user">
-            <a  class="navbar-brand" style="float: right" ng-href="#/" ng-click="logout()">{{statusmessage}}</a>
+        <div ng-controller="LoginController">
+            <div ng-hide="user"><a ng-href="#/login" class="navbar-brand" style="float: right">login</a></div>
+            <div ng-show="user">
+                <a class="navbar-brand" style="float: right" ng-href="#/" ng-click="logout()">{{statusmessage}}</a>
 
-            <label class="navbar-brand"  style="float: right" >Hello! {{user}}</label>
+                <label class="navbar-brand" style="float: right">Hello! {{user}}</label>
+            </div>
+
         </div>
 
     </div>
